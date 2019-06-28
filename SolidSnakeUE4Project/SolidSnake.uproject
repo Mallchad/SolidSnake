@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{1B267522-4979-37A3-7F37-2AAE676BD2F1}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "SolidSnake",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}

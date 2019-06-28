@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SolidSnake.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{D9E4A8D5-C0A6-41CB-8D0D-76865096D71D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SolidSnake.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SolidSnakeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{0358CF53-E73E-48C8-97DD-A4A943793BDC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\SolidSnake">
+      <UniqueIdentifier>{6587988F-42D7-4788-87DD-4D6CF59D1BDB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SolidSnake\SolidSnake.Build.cs">
+      <Filter>Source\SolidSnake</Filter>
+    </None>
+    <ClInclude Include="..\..\Source\SolidSnake\SolidSnake.h">
+      <Filter>Source\SolidSnake</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SolidSnake\SolidSnake.cpp">
+      <Filter>Source\SolidSnake</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SolidSnake\SolidSnakeGameModeBase.h">
+      <Filter>Source\SolidSnake</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SolidSnake\SolidSnakeGameModeBase.cpp">
+      <Filter>Source\SolidSnake</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\SolidSnake\main.h">
+      <Filter>Source\SolidSnake</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SolidSnake\Public\mainFunc.h">
+      <Filter>Source\SolidSnake\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\SolidSnake\main.cpp">
+      <Filter>Source\SolidSnake</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SolidSnake\Private\mainFunc.cpp">
+      <Filter>Source\SolidSnake\Private</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\SolidSnake\Public">
+      <UniqueIdentifier>{e0d7e5ee-fc21-4d86-b9d4-f13ea1d58e15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\SolidSnake\Private">
+      <UniqueIdentifier>{38498387-64ac-4469-b6d8-78d73706736f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
