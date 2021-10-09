@@ -1,3 +1,0 @@
-G:\My Drive\G\Current Work\Imrran\SolidSnake\Source\SolidSnake\SolidSnake.Build.cs
-G:\My Drive\G\Current Work\Imrran\SolidSnake\Source\SolidSnake.Target.cs
-G:\My Drive\G\Current Work\Imrran\SolidSnake\Source\SolidSnakeEditor.Target.cs
