@@ -62,7 +62,7 @@ project_name            = "SolidSnake"
 target_project          = "SolidSnake"
 platform                = platforms.linux
 configuration           = configurations.development_optmized
-build_type              = "-"..build_types.cooked
+build_type              = "-"..build_types.uncooked
 cook_target_platform    = target_platforms.linux_game
 
 -- Paths
