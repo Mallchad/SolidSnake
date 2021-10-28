@@ -1,4 +1,28 @@
 
-SolidSnakeUE4Project/Saved/
+# Ignore everything in root
+/*
 
-SolidSnakeUE4Project/CIntermediate/
+# Game Root Too
+SolidSnakeUE4Project/*
+
+# --Whitelist--
+# Anywhere
+!README
+
+# Root Directory
+!Assets/
+
+# Main Project Directory
+!SolidSnakeUE4Project/
+!SolidSnakeUE4Project/*.lua
+!SolidSnakeUE4Project/*.uproject
+
+!SolidSnakeUE4Project/Config
+!SolidSnakeUE4Project/Content
+!SolidSnakeUE4Project/Content/*
+
+!SolidSnakeUE4Project/Source
+
+# Blacklist
+**/Import
+*.bak
