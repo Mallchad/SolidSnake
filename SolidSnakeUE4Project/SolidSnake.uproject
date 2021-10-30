@@ -1,9 +1,19 @@
 {
-	"FileVersion": 3,
-	"EngineAssociation": "{4.26.2-release-c3caf7b6bf12ae4c8e09b606f10a09776b4d1f38}",
-	"Category": "",
-	"Description": "",
-	"Modules": [
-
-	]
+    "FileVersion": 3,
+    "EngineAssociation": "{4.26.2-release-c3caf7b6bf12ae4c8e09b606f10a09776b4d1f38}",
+    "Category": "Core Game Module",
+    "Description": "A practice project that is a recreation of Metal Gear Solid 1",
+    "Modules":
+    [
+        {
+            "Name": "SolidSnake",
+            "Type": "Runtime",
+            "LoadingPhase": "PostEngineInit"
+        },
+        {
+            "Name": "SolidSnake",
+            "Type": "Editor",
+            "LoadingPhase": "PostEngineInit"
+        }
+    ]
 }
