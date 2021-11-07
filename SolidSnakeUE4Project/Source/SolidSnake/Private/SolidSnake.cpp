@@ -3,7 +3,6 @@
 #include "SolidSnake.h"
 
 #include <CoreMinimal.h>
-// #include <CoreFwd.h>
 #include <Modules/ModuleManager.h>
 
 #include <Logging/LogMacros.h>

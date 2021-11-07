@@ -29,11 +29,23 @@ platforms =
    }
 target_platforms =
 {
+      android = "Android",
+      android_astc = "Android_ASTC",
+      android_dxt = "Android_DXT",
+      android_etc2 = "Android_ETC2",
+      android_client, "AndroidClient",
+      android_astc_client = "Android_ASTCClient",
+      android_dxt_client = "AndroidDXTCLient",
+      android_etc2_client = "Android_ETC2Client",
+      android_multi = "Android_Multi",
+      android_multi_client = "Android_MultiClient",
       linux        = "Linux",
       linux_game   = "LinuxNoEditor",
-      linux_editor = "LinuxEditor",
+      linux_client = "LinuxClient",
       linux_server = "LinuxServer",
-      linux_client = "LinuxClient"
+      linux_aarch64_game = "LinuxAArch64NoEditor",
+      linux_aarch64_client = "LinuxAArch64Client",
+      linux_aarch64_server = "LinuxAAarch64Server"
 }
 configurations =
    {
@@ -62,6 +74,7 @@ project_name            = "SolidSnake"
 target_project          = "SolidSnake"
 platform                = platforms.linux
 configuration           = configurations.development_optmized
+--- Editor is not a valid cook target
 build_type              = "-"..build_types.uncooked
 cook_target_platform    = target_platforms.linux_game
 
