@@ -20,10 +20,13 @@ public class SolidSnake : ModuleRules
 
             PublicDependencyModuleNames.AddRange(new string[]
             {
+                // Core Requirements
                 "Core",
                 "CoreUObject",
                 "Engine",
                 "RHI",
+                // Extra Requirements
+                "AIModule"
                 // "InputCore",
                 // "HeadMountedDisplay",
             });
@@ -53,6 +56,8 @@ public class SolidSnakeEditor : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "RHI",
+                // Extra Requirements
+                "AIModule"
                 // "InputCore",
                 // "HeadMountedDisplay",
             });
