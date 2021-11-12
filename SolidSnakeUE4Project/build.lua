@@ -50,8 +50,8 @@ target_platforms =
 configurations =
    {
       debug_stability       = "Debug",
-      development_optmized  = "Development",
-      shipping              = "Shipping"
+      optmized_development  = "Development",
+      shipping_ready        = "Shipping"
    }
 build_types =
    {
@@ -72,13 +72,9 @@ build_types =
 
 project_name            = "SolidSnake"
 target_project          = "SolidSnake"
-platform                = platforms.linux
-configuration           = configurations.development_optmized
---- Editor is not a valid cook target
-build_type              = "-"..build_types.uncooked
-cook_target_platform    = target_platforms.linux_game
 
--- Paths
+-- == Paths ==
+-- Care here must be taken, because you cannot assume the platform binary path like you might think
 project_path            = "/local/repos/SolidSnake/SolidSnakeUE4Project/" -- hardcoded
 engine_path             = "/local/repos/UnrealEngine4/"                   -- hardcoded
 uproject_path           = project_path..project_name..".uproject"
@@ -88,9 +84,10 @@ editor_command_path     = engine_path.."Engine/Binaries/Linux/UE4Editor"
 editor_cmdlet_path      = engine_path.."Engine/Binaries/Linux/UE4Editor-Cmd"
 ubt_executable_path     = engine_path.."Engine/Binaries/DotNET/UnrealBuildTool.exe"
 build_executable_path   =
-   engine_path.."Engine/Build/BatchFiles/"..platform.."/Build.sh"
+   engine_path.."Engine/Build/BatchFiles/Linux/Build.sh"
 
 -- == Generate Build Commands ==
+-- User Editable
 
 -- Generate Commands
 editor_command          = editor_command_path
@@ -98,28 +95,45 @@ editor_cmdlet_command   = editor_cmdlet_path
 build_script_command    = build_executable_path
 ubt_executable_command  = "mono "..ubt_executable_path
 engine_cmdlet_command   = engine_cmdlet_path
+
 -- Generate Arguments
-cook_target_platform_arg = "-targetplatform="..cook_target_platform
+-- Note: linux_editor cannot be a cook target
+cook_target_platform_arg = target_platforms.linux_game
 
 uproject_arg        = uproject_path
-build_type_arg      = build_type
-project_name_arg    = project_name
-platform_arg        = "-Platform "..platform
+build_type_arg      = build_types.uncooked
+configuration_arg   = configurations.optmized_development
+project_name_arg    = "SolidSnake"
+module_name_arg     = "SolidSnakeEditor"
+platform_arg        = platforms.linux
 cook_content_arg    = "-cookonthefly"
+
+-- No touching from user
+-- Should only run once
+cook_target_platform_arg = "-targetplatform="..cook_target_platform_arg
+
+uproject_arg        = uproject_arg
+build_type_arg      = build_type_arg    -- Appears to be irrelevant command options
+configuration_arg   = configuration_arg
+project_name_arg    = project_name_arg
+module_name_arg     = module_name_arg
+platform_arg        = "-Platform "..platform_arg
+cook_content_arg    = cook_content_arg
+
+
 -- Optional args
 iterative_cook_arg = b_iterative_cook and "-iterate" or "" -- Does this even do anything?
 cook_on_fly_arg    = b_cook_on_fly and "-cookonthefly" or ""
 
 -- Concatonate Arguments
 
--- You need a build editor target to cook with
+-- An editor target must be built to cook or run from the editor
 cook_command = build_command(editor_cmdlet_command,
                              uproject_path,
                              "-run=cook",
                              cook_target_platform_arg,
                              "-iterate",  -- Reuse non-stale cooked content
-                             "-compress"
-                             ) -- Compress build
+                             "-compress") -- Compress build
 
 -- "Cook On the Fly" Cook Server
 cook_server_command = build_command(editor_cmdlet_command,
@@ -133,11 +147,10 @@ cook_server_command = build_command(editor_cmdlet_command,
 -- Don't forget that you need to rebuild the build system if buils.cs files are stale
 build_command = build_command("ccache",
                               build_script_command,
-                              project_name_arg,
+                              module_name_arg,
                               uproject_arg,
-                              build_type_arg,
                               platform_arg,
-                              configuration,
+                              configuration_arg,
                               -- Operation args
                               cook_on_fly_arg, "-waitmutex")
 

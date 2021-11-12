@@ -33,7 +33,9 @@ void FSolidSnake::StartupModule()
     // Try to get available resolutions, unimplimented on Vulkan
     FScreenResolutionArray QueriedVersions = {};
     bool bQuerySuccess = (GDynamicRHI != nullptr) ?
-        GDynamicRHI->RHIGetAvailableResolutions(QueriedVersions, false) : false;
+        GDynamicRHI->RHIGetAvailableResolutions(QueriedVersions, false) :
+        false;
+
     if (bQuerySuccess)
     {
         for (FScreenResolutionRHI xScreenInfo : QueriedVersions)
