@@ -21,6 +21,26 @@ function build_command(str, ...)
    return tmp
 end
 
+--- Distinct modes that the UnrealbuildTool can operate in
+build_mode =
+   {
+      build =                       "Build",
+      clean =                       "Clean",
+      deploy =                      "Deploy",
+      export_compile_commands =     "GenerateClangDatabase",
+      query_targets =               "QueryTargets",
+      execute =                     "Execute",
+      json_export =                 "JsonExport",
+      generate_project_files =      "GenerateProjectFiles",
+      validate_platforms =          "ValidatePlatforms",
+      write_documentation =         "WriteDocumentation",
+      write_metadata =              "WriteMetaData",
+      ios_post_build_sync =         "IOSPostBuildSync",
+      aggregate_parse_timing_info = "AggregatedParsedTImingInfo",
+      parse_msvc_timing_info =      "ParseMsvcTimingInfo",
+      pvs_gather =                  "PVSGather"
+   }
+
 platforms =
    {
       linux     = "Linux",
@@ -107,6 +127,7 @@ project_name_arg    = "SolidSnake"
 module_name_arg     = "SolidSnakeEditor"
 platform_arg        = platforms.linux
 cook_content_arg    = "-cookonthefly"
+build_mode_arg      = build_mode.build
 
 -- No touching from user
 -- Should only run once
@@ -119,7 +140,7 @@ project_name_arg    = project_name_arg
 module_name_arg     = module_name_arg
 platform_arg        = "-Platform "..platform_arg
 cook_content_arg    = cook_content_arg
-
+build_mode_arg = "-mode="..build_mode_arg
 
 -- Optional args
 iterative_cook_arg = b_iterative_cook and "-iterate" or "" -- Does this even do anything?
@@ -151,8 +172,8 @@ build_command = build_command("ccache",
                               uproject_arg,
                               platform_arg,
                               configuration_arg,
-                              -- Operation args
-                              cook_on_fly_arg, "-waitmutex")
+                              cook_on_fly_arg, "-waitmutex",
+                              build_mode_arg)
 
 -- Run with '-Game' to run uncooked project
 editor_command = "/local/repos/UnrealEngine4/Engine/Binaries/Linux/UE4Editor-Cmd -generateprojectfiles $(readlink -f SolidSnake.uproject) Development znull &"
