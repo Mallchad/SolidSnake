@@ -70,7 +70,7 @@ target_platforms =
 configurations =
    {
       debug_stability       = "Debug",
-      optmized_development  = "Development",
+      development_optmized  = "Development",
       shipping_ready        = "Shipping"
    }
 build_types =
@@ -122,9 +122,9 @@ cook_target_platform_arg = target_platforms.linux_game
 
 uproject_arg        = uproject_path
 build_type_arg      = build_types.uncooked
-configuration_arg   = configurations.optmized_development
+configuration_arg   = configurations.debug_stability
 project_name_arg    = "SolidSnake"
-module_name_arg     = "SolidSnakeEditor"
+target_module_arg    = "SolidSnake"
 platform_arg        = platforms.linux
 cook_content_arg    = "-cookonthefly"
 build_mode_arg      = build_mode.build
@@ -137,7 +137,7 @@ uproject_arg        = uproject_arg
 build_type_arg      = build_type_arg    -- Appears to be irrelevant command options
 configuration_arg   = configuration_arg
 project_name_arg    = project_name_arg
-module_name_arg     = module_name_arg
+target_module_arg     = target_module_arg
 platform_arg        = "-Platform "..platform_arg
 cook_content_arg    = cook_content_arg
 build_mode_arg = "-mode="..build_mode_arg
@@ -168,7 +168,7 @@ cook_server_command = build_command(editor_cmdlet_command,
 -- Don't forget that you need to rebuild the build system if buils.cs files are stale
 build_command = build_command("ccache",
                               build_script_command,
-                              module_name_arg,
+                              target_module_arg,
                               uproject_arg,
                               platform_arg,
                               configuration_arg,

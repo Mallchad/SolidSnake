@@ -82,3 +82,16 @@
 // Empty macros, can pad declarations for tools
 #define NODECLARE
 #define NODEC
+
+
+// Sanity Alias
+// Source: Engine/Source/Runtime/Engine/Public/NetworkingDistanceConstants.h
+// magic number distances used by AI/networking
+#define CLOSE_PROXIMITY                 500.f
+#define NEAR_SIGHT_THRESHOLD            2000.f
+#define MED_SIGHT_THRESHOLD             3162.f
+#define FAR_SIGHT_THRESHOLD             8000.f
+#define CLOSE_PROXIMITY_SQUARED         (CLOSEPROXIMITY * CLOSEPROXIMITY)
+#define NEAR_SIGHT_THRESHOLD_SQUARED    (NEAR_SIGHT_THRESHOLD * NEAR_SIGHT_THRESHOLD)
+#define MED_SIGHT_THRESHOLD_SQUARED     (MED_SIGHT_THRESHOLD * MED_SIGHT_THRESHOLD)
+#define FAR_SIGHT_THRESHOLD_SQUARED     (FAR_SIGHT_THRESHOLD * FAR_SIGHT_THRESHOLD)

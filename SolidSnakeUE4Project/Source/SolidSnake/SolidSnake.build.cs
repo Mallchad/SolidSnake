@@ -25,8 +25,10 @@ public class SolidSnake : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "RHI",
+
                 // Extra Requirements
-                "AIModule"
+                "AIModule",
+                "NavigationSystem"
                 // "InputCore",
                 // "HeadMountedDisplay",
             });
