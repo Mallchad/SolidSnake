@@ -8,6 +8,10 @@ SolidSnakeUE4Project/*
 # --Whitelist--
 # Anywhere
 !README
+!README*
+!HACKING
+!HACKING.md
+
 
 # Root Directory
 !Assets/

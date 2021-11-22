@@ -1,5 +1,8 @@
 
-# Notes
+See HACKING for building and contributing
+
+Notes
+=====
 
 * MaterialProxy - this is a MaterialInstance that provides a faster way to iterate by not recompiling shaders when only a material constant/parameter is changed
 * MaterialView - This is the same as the MaterialProxy but with default paramaters, its not meant to be edited, if you want to iterate on the original material, try it out on a few meshes with the MaterialProxy, then back-propagate the changes to the parameter defaults.

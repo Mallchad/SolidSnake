@@ -1,0 +1,21 @@
+
+Requirements
+============
+- Custom Build Tool [1]
+
+[1] The project  uses a custom version  of the UnrealHeaderTool, it  has not yet
+been distributed in any easily accessible format. It's sole purpose as it stands
+is to improve macro support with the  header tool.
+
+This change  isn't complex, macros  are practically redundant,  simply replacing
+them with standard C++ as per the macros, or code through the pre-processor step
+on the code (-I including non-engine Source  files) is enough to make it build -
+assuming the pre-processor can expand whilst ignoring errors.
+
+Quirks with Building
+====================
+The build errors can  be somewhat tearse.  You may find  often the troubles with
+building is related to the module rules (target.cs), or build type (editor, game
+client).
+
+Otherwise it may be to do with the build arguments passed to the `UnrealBuildTool`
