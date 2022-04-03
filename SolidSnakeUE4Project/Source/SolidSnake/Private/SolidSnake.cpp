@@ -8,6 +8,7 @@
 #include <Logging/LogMacros.h>
 #include <DynamicRHI.h>
 #include <GameFramework/GameUserSettings.h>
+#include <SDL.h>
 
 DECLARE_LOG_CATEGORY_EXTERN(LogSolidSnake, All, All);
 DEFINE_LOG_CATEGORY(LogSolidSnake);
@@ -21,6 +22,9 @@ static TAutoConsoleVariable<int32> CVarNullSetting(
 class UGameUserSettings;
 void FSolidSnake::StartupModule()
 {
+    // Don't minimize on focus loss so its easier to return to fullscreen games
+    SDL_SetHint("SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS", "false");
+
     // Frame capping and video settings for machine stability
     if (GEngine != nullptr)
     {

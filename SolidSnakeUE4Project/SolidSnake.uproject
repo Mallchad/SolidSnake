@@ -9,6 +9,11 @@
             "Name": "SolidSnake",
             "Type": "Runtime",
             "LoadingPhase": "PostEngineInit"
+        },
+        {
+            "Name": "SolidSnake",
+            "Type": "Editor",
+            "LoadingPhase": "PostEngineInit"
         }
     ]
 }

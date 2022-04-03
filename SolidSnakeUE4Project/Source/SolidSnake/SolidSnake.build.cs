@@ -25,6 +25,7 @@ public class SolidSnake : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "RHI",
+                "SDL2",
 
                 // Extra Requirements
                 "AIModule",
@@ -32,5 +33,6 @@ public class SolidSnake : ModuleRules
                 // "InputCore",
                 // "HeadMountedDisplay",
             });
+
         }
 }
