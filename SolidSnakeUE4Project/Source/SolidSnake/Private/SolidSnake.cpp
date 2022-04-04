@@ -8,7 +8,7 @@
 #include <Logging/LogMacros.h>
 #include <DynamicRHI.h>
 #include <GameFramework/GameUserSettings.h>
-#include <SDL.h>
+#include <SDL_hints.h>
 
 DECLARE_LOG_CATEGORY_EXTERN(LogSolidSnake, All, All);
 DEFINE_LOG_CATEGORY(LogSolidSnake);
