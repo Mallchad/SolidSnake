@@ -1,6 +1,8 @@
 #!/usr/bin/env lua
 
 --- Helper Build Script from Compiling a Standalone Game
+-- NOTE: Halfway down the script there are some user-editor tunables
+-- Some of these should probably be tweaked before running the build command
 
 --- Join arguments into one long whitespace seperated shell command
 -- The primary purpose is a syntactically cleaner
@@ -93,6 +95,8 @@ build_types =
 project_name            = "SolidSnake"
 target_project          = "SolidSnake"
 
+-- User Editable Values
+-- Hardcoded values should probably be changed locally
 -- == Paths ==
 -- Care here must be taken, because you cannot assume the platform binary path like you might think
 project_path            = "/local/repos/SolidSnake/SolidSnakeUE4Project/" -- hardcoded
@@ -107,7 +111,6 @@ build_executable_path   =
    engine_path.."Engine/Build/BatchFiles/Linux/Build.sh"
 
 -- == Generate Build Commands ==
--- User Editable
 
 -- Generate Commands
 editor_command          = editor_command_path
